@@ -1,0 +1,21 @@
+body {
+    background-color: #f8f9fa;
+    
+}
+.container {
+    margin-top: 50px;
+    display :flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#loginForm{
+    width :50%;
+    
+}
+#btnReg{
+    text-decoration: none;
+}
+#promptReg{
+    margin: 20px;
+}

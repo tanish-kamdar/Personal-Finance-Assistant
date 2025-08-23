@@ -1,0 +1,20 @@
+/* #pieChart{
+    display : inline-block !important;
+    width :500px !important; 
+    height : 500px !important;
+    margin : 5rem !important;
+} */
+
+.chart-container{
+    width: 100%;
+  max-width: 600px; /* Limit the width */
+  margin: 20px auto; /* Center the chart */
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px #ddd;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+}
+.body{
+  background-image: url('../../image.jpg');
+}

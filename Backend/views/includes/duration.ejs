@@ -1,0 +1,63 @@
+<div class="row m-3">
+    <div class="col-md-3">
+        <div class="btn-group-vertical w-100">
+            <button type="button" class="btn btn-outline-primary btn-filter-type" data-filter="year" id="btnYear">By Year</button>
+            <button type="button" class="btn btn-outline-primary btn-filter-type" data-filter="month" id="btnMonth">By Month</button>
+            <button type="button" class="btn btn-outline-primary btn-filter-type" data-filter="range" id="btnRange">By Date Range</button>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <!-- Year Filter -->
+        <div id="yearFilter" class="filter-option">
+            <label for="yearSelect" class="form-label">Select Year</label>
+            <select id="yearSelect" class="form-select" name="year">
+                <% 
+                const years = [...new Set(transactions.map(t => new Date(t.date).getFullYear()))].sort((a,b) => b-a); 
+                years.forEach(year => { %>
+                    <option value="<%= year %>"><%= year %></option>
+                <% }); %>
+            </select>
+            <button class="btn btn-success mt-3 mb-3" id="btnByYear">Show Transactions</button>
+        </div>
+        
+        <!-- Month Filter -->
+        <div id="monthFilter" class="filter-option">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="yearMonthSelect" class="form-label">Year</label>
+                    <select id="yearMonthSelect" class="form-select" name="month-year">
+                        <% years.forEach(year => { %>
+                            <option value="<%= year %>"><%= year %></option>
+                        <% }); %>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="monthSelect" class="form-label">Month</label>
+                    <select id="monthSelect" class="form-select" name="month-month">
+                        <% 
+                        const months = ['January', 'February', 'March', 'April', 'May', 'June', 
+                                       'July', 'August', 'September', 'October', 'November', 'December'];
+                        months.forEach((month, index) => { %>
+                            <option value="<%= index + 1 %>"><%= month %></option>
+                        <% }); %>
+                    </select>
+                </div>
+                <button class="btn btn-success col-6 offset-3 mt-3 mb-3" id="btnByMonth">Show Transactions</button>
+            </div>
+        </div>
+        
+        <!-- Date Range Filter -->
+        <div id="rangeFilter" class="filter-option">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="startDate" class="form-label">Start Date</label>
+                    <input type="date" id="startDate" class="form-control" name="rangeStart">
+                </div>
+                <div class="col-md-6">
+                    <label for="endDate" class="form-label">End Date</label>
+                    <input type="date" id="endDate" class="form-control" name="rangeEnd">
+                </div>
+                <button class="btn btn-success col-md-6 offset-3 mt-3 mb-3" id="btnByRange">Show Transactions</button>
+            </div>
+        </div>
+    </div>

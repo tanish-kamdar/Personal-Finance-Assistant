@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        #signupForm{
+    width: 400px;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+    </style>
+</head>
+<body>
+    <div id="signupForm" class="mt-5 signupform">
+        <h2 class="text-center mb-4">Signup</h2>
+        <form method="post" action="http://localhost:8080/signup">
+            <div class="mb-3">
+                
+                <input type="email" class="form-control" id="signupEmail" placeholder="Email Address" name="email">
+            </div>
+            <div class="row g-3 mb-3">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="First name" aria-label="First name" name="fname">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" name="lname">
+                </div>
+              </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" id="signupPassword" placeholder="Set Password" name="password">
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" id="signupPassword" placeholder="Confirm Password" name="password">
+            </div>
+            <button class="btn btn-success w-100" >Signup</button>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+        let btn=document.querySelector('button');
+        btn.addEventListener('click',()=>{
+            console.log('button was clicked');
+        });
+    </script>
+</body>
+</html>
